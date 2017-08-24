@@ -1,0 +1,25 @@
+@charset "utf-8";
+/*
+ Theme Name:   kemosite-blank-theme
+ Theme URI:    gitub
+ Description:  Kevin Montgomery's Blank Wordpress Theme. Child of default Wordpress theme. Version to match version of WordPress supported.
+ Author:       Kevin Montgomery
+ Author URI:   http://kemosite.com
+ Template:     twentyseventeen
+ Version:      4.8.1
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready, flexbox
+ Text Domain:  kemosite-blank-theme
+*/
+
+/*
+ * The Template line corresponds to the directory name of the parent theme.
+ * The parent theme in our example is the Twenty Seventeen theme, so the 
+ * Template will be twentyseventeen. You may be working with a different theme, 
+ * so adjust accordingly.
+ */
+
+/* [Foundation CSS (Compressed)] */
+@import "foundation-6.4.2-custom/css/foundation.min.css";
+@import "foundation-6.4.2-custom/css/app.css";
