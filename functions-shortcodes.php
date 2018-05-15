@@ -166,7 +166,7 @@ add_shortcode('tab', 'tab_shortcode_method');
 /* Progress bars shortcode */
 function progress_bars_shortcode_method($attributes, $content) {
 
-    $output = "":
+    $output = "";
 
     $output .= '<div class="progress" role="progressbar" tabindex="0" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">' . "\n";
     $output .= do_shortcode($content) . "\n";
@@ -279,6 +279,6 @@ require_once ("functions-shortcodes-callouts.php");
 require_once ("functions-shortcodes-forms.php");
 require_once ("functions-shortcodes-buttons.php");
 
-require_once ("functions-shortcodes-central.php"); // Rewriting Central Shortcodes as Foundation functions.
+// require_once ("functions-shortcodes-central.php"); // Rewriting Central Shortcodes as Foundation functions.
 
 ?>

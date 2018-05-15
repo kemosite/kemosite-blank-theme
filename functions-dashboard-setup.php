@@ -40,6 +40,12 @@ function kemosite_blank_nextsteps_widget_display() {
 	Options –Indexes
 	</pre>
 	<h1>Plug-Ins</h1>
+	<h3><strong>Required Plugins</strong></h3>
+	<p>kemosite typography plug-in for Wordpress<br>
+	<?php
+	/* [DETECT KEMOSITE TYPOGRAPHY PLUGIN] */
+	if ( is_plugin_active( 'kemosite-typography-plugin/index.php' ) ): ?><em>Active</em><?php else: ?><em>Inactive</em><?php endif; ?>
+	</p>
     <p>Install these plugins, if functionality needed.</p>
     <ol>
     <li>Jetpack</li>

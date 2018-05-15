@@ -29,29 +29,44 @@
 
 <?php wp_head(); ?>
 
-</head>
+<!-- Turn off the layout until the page has loaded -->
+<style>
+.grid-container { display: none; }
+</style>
 
-<body <?php body_class(); ?>>
-
-
-
-
-
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- */
-?>
-
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-
-<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <div class="grid-container">
+
+<!-- Start Top Bar -->
+<div class="top-bar">
+	<div class="top-bar-left">
+		<div class="grid-x">
+			<div class="shrink cell">
+				<ul class="dropdown menu" data-dropdown-menu>
+					<li class="menu-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
+				</ul>
+			</div>
+			<?php if ( has_nav_menu( 'top-bar-menu' ) ) : ?>
+			<div class="auto cell">
+				<?php wp_nav_menu( array(
+					'theme_location' => 'top-bar-menu',
+					'menu_id' => 'top-bar-menu',
+					'menu_class' => 'dropdown menu',
+					'container' => 'nav',
+					'walker' => new mega_menu_walker()
+				) ); ?>
+			</div>
+			<?php endif; ?>
+		</div>
+	</div>
+	<div class="top-bar-right">
+		<div class="grid-x">
+			<div class="shrink cell">
+				<?php get_search_form(); ?>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Top Bar -->

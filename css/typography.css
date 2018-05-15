@@ -1,0 +1,77 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* HEADER GROUPS */
+h1 { font-size: 1.75em; font-weight: normal; }	/* Reserve for page titles */ 
+h2 { font-size: 1.5em; font-weight: normal; }	/* Subtitles */
+h3 { font-size: 1.25em; font-weight: normal; }   /* [Section title+] */
+h4 { font-size: 1em; font-weight: bold; }      /* [Normal] */
+h5 { font-size: .875em; font-weight: bold; }	
+h6 { font-size: .75em; font-weight: bold; }    /* [Small] */
+
+h1,h2,h3,h4,h5,h6 { margin-top: .5em; }
+p,ul,ol { margin-bottom: .5em; }
+li { margin-top: .25em; margin-bottom: .25em; }
+
+/* [DEFAULT LINK FORMATTING] */
+
+/* emails */
+a[href^="mailto:"]:after {
+    font-family: 'modern_pictogramsnormal';
+    content: "m";
+    margin-left: .25em;
+}
+
+/* pdfs */
+a[href$=".pdf"]:after {
+    font-family: 'modern_pictogramsnormal';
+    content: "K";
+    margin-left: .25em;
+}
+
+/* highlight links that open in a new window */
+a[target="_blank"]:after,
+a[target="new"]:after {
+    font-family: 'modern_pictogramsnormal';
+    content: "W";
+    margin-left: .25em;
+}
+
+/*
+p > a:hover,
+li > a:hover,
+h1 > a:hover,
+h2 > a:hover,
+h3 > a:hover,
+h4 > a:hover,
+h5 > a:hover,
+h6 > a:hover {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0) inset, 0px 0.125em 0px rgb(0, 0, 0);
+}
+*/
+
+/* A neat way of styling your blockquotes to add a bit more punch to them. */
+
+blockquote {
+     background:#f9f9f9;
+     border-left:10px solid #ccc;
+     margin:1.5em 10px;
+     padding:.5em 10px;
+     quotes:"\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+     color:#ccc;
+     content:open-quote;
+     font-size:4em;
+     line-height:.1em;
+     margin-right:.25em;
+     vertical-align:-.4em;
+}
+blockquote p {
+     display:inline;
+}
+
+input, textarea, button { 
+    font-size: 1em;
+    padding: .5em 1em;
+}

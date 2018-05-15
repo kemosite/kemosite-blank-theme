@@ -6,7 +6,7 @@ function callouts_shortcode_method($attributes, $content) {
 
 	$output .= '<div class="callout';
 
-	if ($attributes !== NULL):
+	if ($attributes !== NULL && is_array($attributes)):
 
 		if ($attributes['primary'] == "true"): $output .= ' primary'; endif;
 		if ($attributes['secondary'] == "true"): $output .= ' secondary'; endif;

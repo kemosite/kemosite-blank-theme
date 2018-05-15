@@ -6,7 +6,7 @@ function row_shortcode_method($attributes, $content) {
 
 	$output .= '<div class="grid-x';
 
-	if ($attributes !== NULL):
+	if ($attributes !== NULL && is_array($attributes)):
 
 		if ($attributes['gutter'] == "true"): $output .= ' grid-margin-x'; endif;
 

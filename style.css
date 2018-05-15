@@ -6,7 +6,7 @@
  Author:       Kevin Montgomery
  Author URI:   http://kemosite.com
  Template:     twentyseventeen
- Version:      4.8.1
+ Version:      4.9.5
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready, flexbox
@@ -19,7 +19,3 @@
  * Template will be twentyseventeen. You may be working with a different theme, 
  * so adjust accordingly.
  */
-
-/* [Foundation CSS (Compressed)] */
-@import "foundation-6.4.2-custom/css/foundation.min.css";
-@import "foundation-6.4.2-custom/css/app.css";

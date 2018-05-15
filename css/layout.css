@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+/* BASE LAYOUT STYLE */
+body {
+	
+	-webkit-font-smoothing: antialiased;
+	font-smooth: always;
+	
+	/* apply a natural box layout model to all elements */
+	* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+	/* Hide horizontal scrolling, if content is butting against the edge of the viewport. */
+	overflow-x: hidden;
+	
+}
+
+/* [Control Grid Parameters] */
+.grid-container {
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+}
+
+.grid-x { margin-top: .5em; }
+
+/* Padding of 0.5em */
+
+body *,
+body *:hover {
+	transition: height 2s ease-in-out;
+}
+
+.wrap { margin: 1rem auto; }
+
+ul { line-height: 1; }
+
+input, textarea, button {
+	min-height: 56px;
+	min-width: 80px;
+}
+
+/* [Menu Styles] */
+.menu .menu-text { padding: 0; }
+.sub-menu {
+	display: none;
+	transition-delay: 5s;
+}
+
+.home.url.item  a {
+	padding: .7rem 1rem;
+}
+
+.dropdown.menu > li.menu-item-has-children:hover > a + .sub-menu,
+.dropdown.menu > li.menu-item-has-children > a:hover + .sub-menu,
+.dropdown.menu > li.menu-item-has-children > .sub-menu:hover
+{
+	display: flex;
+	list-style: none;
+	position: absolute;
+	z-index: 1;
+	border: 1px solid #cacaca;
+	left: 0;
+	right: 1em;
+	top: auto;
+	margin: 0;
+	transition-delay: 5s;
+}

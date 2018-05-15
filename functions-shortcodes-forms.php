@@ -24,7 +24,7 @@ function input_shortcode_method($attributes, $content) {
 		&& $attributes['type'] !== "checkbox"):
 			$output .= '<label>'.$content.'</label>' . "\n";
 		endif;
-		if $attributes['group'] == "true"): $output .= '<div class="input-group">' . "\n"; endif;
+		if ($attributes['group'] == "true"): $output .= '<div class="input-group">' . "\n"; endif;
 
 	endif;
 
