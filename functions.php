@@ -2,6 +2,18 @@
 
 define("KEMOSITE_BLANK_PARENT_STYLE", "twentyseventeen"); // This is 'twentyseventeen' for the Twenty Seventeen theme.
 
+/* [Declare Depedencies] */
+function kemosite_blank_theme_dependencies() {
+  
+	// Check for kemosite-typography-plugin
+	if (!is_plugin_active('kemosite-typography-plugin/index.php')):
+		echo '<div class="error"><p>Warning: This theme needs the kemosite-typography-plugin to function.</p></div>';
+	endif;
+	//plugin is activated
+
+}
+add_action( 'admin_notices', 'kemosite_blank_theme_dependencies' );
+
 /* [Includes] */
 require_once ("functions-enqueue-scripts.php");
 require_once ("functions-dashboard-setup.php");
