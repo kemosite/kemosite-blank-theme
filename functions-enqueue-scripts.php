@@ -12,11 +12,13 @@ function my_theme_enqueue_styles() {
         wp_get_theme()->get('Version')
     );
     */
-
+    
     wp_enqueue_style( 'kemosite-blank-theme', get_stylesheet_directory_uri() . '/style.css' );
 
     /* [Foundation Assets] */
     wp_enqueue_style( 'foundation', get_stylesheet_directory_uri() . '/foundation-6.4.2-custom/css/foundation.min.css' );
+
+    /* [Foundation Icons v 3.0] */
     wp_enqueue_style( 'foundation-icons', get_stylesheet_directory_uri() . '/foundation-icons/foundation-icons.css' );
     
     /* [Blank Theme Fonts] */

@@ -1,96 +1,78 @@
 <?php get_header(); ?>
 
+<div class="section">
+
+	<section class="grid-x grid-padding-x align-middle align-center">
+		<header>
+			<h1><?php bloginfo( 'name' ); ?></h1>
+		</header>
+	</section>
+
+</div>
+
+<div class="content">
+
 <!-- Display all categories, then display posts by popularity or date published -->
 
 <?php foreach (get_categories() as $cat_key => $category): ?>
 
-	<div class="grid-x grid-margin-x grid-padding-x">
+	<main role="main">
 
-		<div class="medium-8 cell">
+		<section>
 
-			<main role="main">
+			<header>
 
-				<section>
+				<h4><?php echo $category->name; ?></h4>
 
-					<header>
+			</header>
 
-						<h4><?php echo $category->name; ?></h4>
+			<?php $posts = get_posts( array('numberposts' => 5, 'category' => $category->term_id, 'orderby' => 'date', 'order' => 'DESC')); ?>
 
-					</header>
+			<?php $latest_post = $posts[0]; ?>
 
-					<?php $posts = get_posts( array('numberposts' => 5, 'category' => $category->term_id, 'orderby' => 'date', 'order' => 'DESC')); ?>
+			<?php array_shift($posts); ?>
 
-					<?php $latest_post = $posts[0]; ?>
+			<article>
 
-					<?php array_shift($posts); ?>
+				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id($latest_post->object_id), 'single-post-thumbnail' ); ?>
+				<?php if ($image): ?>
+					<div><img style="width: 100%;" src="<?php echo $image[0]; ?>"></div>
+				<?php endif; ?>
 
-					<article>
+				<header>
 
-						<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id($latest_post->object_id), 'single-post-thumbnail' ); ?>
-						<?php if ($image): ?>
-							<div><img style="width: 100%;" src="<?php echo $image[0]; ?>"></div>
-						<?php endif; ?>
+					<?php
+					if ( is_front_page() && is_home() ) {
+						echo '<h2 class="entry-title"><a href="' . esc_url($latest_post->guid) . '" rel="bookmark">'.$latest_post->post_title.'</a></h2>';
+					} else {
+						echo '<h1 class="entry-title"><a href="' . esc_url($latest_post->guid) . '" rel="bookmark">'.$latest_post->post_title.'</a></h1>';
+					}
+					?>
 
-						<header>
+				</header>
 
-							<?php
-							if ( is_front_page() && is_home() ) {
-								echo '<h2 class="entry-title"><a href="' . esc_url($latest_post->guid) . '" rel="bookmark">'.$latest_post->post_title.'</a></h2>';
-							} else {
-								echo '<h1 class="entry-title"><a href="' . esc_url($latest_post->guid) . '" rel="bookmark">'.$latest_post->post_title.'</a></h1>';
-							}
-							?>
+				<?php if ($latest_post->post_content): ?>
+				<div>
+					
+					<?php echo do_shortcode($latest_post->post_content); ?>
 
-						</header>
+				</div>
+				<?php endif; ?>
 
-						<?php if ($latest_post->post_content): ?>
-						<div>
-							
-							<?php echo do_shortcode($latest_post->post_content); ?>
-
-						</div>
-						<?php endif; ?>
-
-						<?php 
-						
-						echo "<pre>";
-						if (function_exists('stats_get_csv')) { print_r(stats_get_csv('postviews')); }
-						echo "</pre>";
-
-						?>
-
-					</article>
-
-
-				</section>
-
-			</main>
-
-		</div>
-
-		<div class="medium-4 cell">
-
-			<!-- Side content -->
-
-			<ul>
-
-			<?php foreach ($posts as $post_key => $post): ?>
-
-				<?php /*
+				<?php 
+				
 				echo "<pre>";
-				print_r($post);
+				if (function_exists('stats_get_csv')) { print_r(stats_get_csv('postviews')); }
 				echo "</pre>";
-				*/ ?>
 
-				<li><a href="<?php echo $post->guid; ?>"><?php echo $post->post_title; ?></a></li>
+				?>
 
-			<?php endforeach; ?>
+			</article>
 
-			</ul>
 
-		</div>
+		</section>
 
-	</div>
+	</main>
 
 	<hr>
 

@@ -55,13 +55,19 @@
 
 </footer>
 
-</div><!-- .grid-container -->
+</div> <!-- .content placement -->
+
+</div><!-- .grid-layout-container -->
+
+</div><!-- .off-canvas-content -->
+
+</div><!-- .off-canvas-wrapper -->
 
 <?php wp_footer(); ?>
 
 <noscript>
 <style>
-.grid-container { display: block; }
+.off-canvas-wrapper { display: block; }
 </style>
 </noscript>
 

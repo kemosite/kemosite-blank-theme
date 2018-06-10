@@ -1,68 +1,291 @@
 @charset "utf-8";
 
-/* BASE LAYOUT STYLE */
-body {
+/* [Speech Media] */
+@media speech {}
+
+/* [All Media] */
+@media all {
+
+	.speech {
+
+		position:absolute;
+		left:-10000px;
+		top:auto;
+		width:1px;
+		height:1px;
+		overflow:hidden;
+
+	}
+
+}
+
+/* [Print Media] */
+@media print {
+
+	body {
+		background: white;
+		color: black;
+		margin: 0;
+	}
+
+}
+
+/* [Screen Media] */
+@media screen {
+
+	/* BASE LAYOUT STYLE */
+	body {
+		
+		-webkit-font-smoothing: antialiased;
+		font-smooth: always;
+		
+		/* apply a natural box layout model to all elements */
+		* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+		/* Hide horizontal scrolling, if content is butting against the edge of the viewport. */
+		overflow-x: hidden;
+		
+	}
+
+	body *,
+	body *:hover {
+		transition: height 2s ease-in-out;
+	}
+
+	.wrap { margin: 1rem auto; }
+
+	/* [Control Grid Parameters] */
+	.off-canvas-wrapper {
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 0;
+	}
+
+	.grid-x { margin-top: .5em; }
+
+	ul { line-height: 1; }
+
+	input, textarea, button, .button, [type="search"] {
+		min-height: 56px;
+		min-width: 80px;
+		margin: 1rem;
+	}
+
+	.close-button {
+		top: 0;
+		right: 0;
+	}
+
+	.clear-off-canvas-close-button {
+		margin-top: 5rem;
+	}
+
+	/** [MENU STYLES] **/
+
+	/* [Mobile Menu] */
+	.main_mobile_menu {
+		position: fixed;
+		width: 100vw;
+		grid-area: menu;
+		background-color: white;
+		z-index: 1;
+		top: 0;
+	}
+
+	.section {
+		grid-area: section;
+		background-color: #4d4d4d;
+	}
+	.section h1 {
+		text-align: center;
+		color: white;
+		font-weight: bold;
+	}
+
+	.content {
+		grid-area: content;
+		margin: 0 1rem;
+	}
+
+	/* [Desktop Menu] */
+
+	.menu.nested {margin-left: 0 }
+	.menu li { font-weight: bold; }
+	.menu .nested li { font-weight: normal; }
+
+	.off-canvas-menu > li > a,
+	.off-canvas-menu .sub-menu > li > a {
+		border-bottom: 1px solid;
+	}
+
 	
-	-webkit-font-smoothing: antialiased;
-	font-smooth: always;
+	/* [Foundation Top-Bar Menu Example] *
+	**
+	.menu .menu-text { padding: 0; }
+	.sub-menu {
+		display: none;
+		transition-delay: 5s;
+	}
+
+	.home.url.item  a {
+		padding: .7rem 1rem;
+	}
+
+	.dropdown.menu > li.menu-item-has-children:hover > a + .sub-menu,
+	.dropdown.menu > li.menu-item-has-children > a:hover + .sub-menu,
+	.dropdown.menu > li.menu-item-has-children > .sub-menu:hover
+	{
+		display: flex;
+		list-style: none;
+		position: absolute;
+		z-index: 1;
+		border: 1px solid #cacaca;
+		left: 0;
+		right: 1em;
+		top: auto;
+		margin: 0;
+		transition-delay: 5s;
+	}
+	*/
+
+}
+
+/* [Set Up Base Breakpoints and Orientations] */
+
+@media only screen and (max-width: 39rem) and (orientation: portrait) {
 	
-	/* apply a natural box layout model to all elements */
-	* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+	/*
+	** Define grid for portrait mode
+	** Slide between section and content
+	** Menu options remain fixed
+	** 
+	** https://css-tricks.com/snippets/css/complete-guide-grid/
+	** https://medium.com/flexbox-and-grids/how-to-efficiently-master-the-css-grid-in-a-jiffy-585d0c213577
+	*/
 
-	/* Hide horizontal scrolling, if content is butting against the edge of the viewport. */
-	overflow-x: hidden;
-	
+	/* [Define Grid Container] */
+	.grid-layout-container {
+		display: grid;
+		grid-template-columns: 100vw;
+		grid-template-rows: 2rem calc(50vh - 2rem) 1fr;
+		grid-template-areas:	"menu"
+								"section"
+								"content";
+		grid-gap: 0;
+		overflow: auto;
+	}
+
+	.section > section {
+		height: calc(50vh - 2rem);
+	}
+
 }
 
-/* [Control Grid Parameters] */
-.grid-container {
-	max-width: 100%;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 0;
+@media only screen and (max-width: 39rem) and (orientation: landscape) {
+
+	/* [Define Grid Container] */
+	.grid-layout-container {
+		display: grid;
+		grid-template-columns: 100vw;
+		grid-template-rows: 2rem calc(33vh - 2rem) 100vh;
+		grid-template-areas:	"menu"
+								"section"	
+								"content";
+		grid-gap: 0;
+	}
+	.section > section {
+		height: calc(33vh - 2rem);
+	}
+
 }
 
-.grid-x { margin-top: .5em; }
+@media only screen and (max-width: 59rem) and (orientation: portrait) {
+	/* [Define Grid Container] */
+	.grid-layout-container {
+		display: grid;
+		grid-template-columns: 100vw;
+		grid-template-rows: 2rem calc(33vh - 2rem) 1fr;
+		grid-template-areas:	"menu"
+								"section"
+								"content";
+		grid-gap: 0;
+		overflow: auto;
+	}
 
-/* Padding of 0.5em */
+	.section > section {
+		height: calc(33vh - 2rem);
+	}
 
-body *,
-body *:hover {
-	transition: height 2s ease-in-out;
+	p {
+		column-count: 2;
+		column-gap: 1rem;
+		column-width: 39rem;
+	}
+}
+@media only screen and (max-width: 59rem) and (orientation: landscape) {
+	/* [Define Grid Container] */
+	.grid-layout-container {
+		display: grid;
+		grid-template-columns: 100vw;
+		grid-template-rows: 2rem calc(33vh - 2rem) 1fr;
+		grid-template-areas:	"menu"
+								"section"	
+								"content";
+		grid-gap: 0;
+	}
+	.section > section {
+		height: calc(33vh - 2rem);
+	}
+
+	p {
+		column-count: 2;
+		column-gap: 1rem;
+		column-width: 39rem;
+	}
 }
 
-.wrap { margin: 1rem auto; }
+@media only screen and (min-width: 59rem) and (orientation: portrait) {
+	/* [Define Grid Container] */
+	.grid-layout-container {
+		display: grid;
+		grid-template-columns: 100vw;
+		grid-template-rows: 2rem calc(33vh - 2rem) 1fr;
+		grid-template-areas:	"menu"
+								"section"
+								"content";
+		grid-gap: 0;
+		overflow: auto;
+	}
 
-ul { line-height: 1; }
+	.section > section {
+		height: calc(33vh - 2rem);
+	}
 
-input, textarea, button {
-	min-height: 56px;
-	min-width: 80px;
+	p {
+		column-count: 2;
+		column-gap: 1rem;
+		column-width: 39rem;
+	}
 }
+@media only screen and (min-width: 59rem) and (orientation: landscape) {
+	/* [Define Grid Container] */
+	.grid-layout-container {
+		display: grid;
+		grid-template-columns: 100vw;
+		grid-template-rows: 2rem calc(33vh - 2rem) 1fr;
+		grid-template-areas:	"menu"
+								"section"	
+								"content";
+		grid-gap: 0;
+	}
+	.section > section {
+		height: calc(33vh - 2rem);
+	}
 
-/* [Menu Styles] */
-.menu .menu-text { padding: 0; }
-.sub-menu {
-	display: none;
-	transition-delay: 5s;
-}
-
-.home.url.item  a {
-	padding: .7rem 1rem;
-}
-
-.dropdown.menu > li.menu-item-has-children:hover > a + .sub-menu,
-.dropdown.menu > li.menu-item-has-children > a:hover + .sub-menu,
-.dropdown.menu > li.menu-item-has-children > .sub-menu:hover
-{
-	display: flex;
-	list-style: none;
-	position: absolute;
-	z-index: 1;
-	border: 1px solid #cacaca;
-	left: 0;
-	right: 1em;
-	top: auto;
-	margin: 0;
-	transition-delay: 5s;
+	p {
+		column-count: 2;
+		column-gap: 1rem;
+		column-width: 39rem;
+	}
 }

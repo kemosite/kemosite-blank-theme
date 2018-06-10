@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", function() {
 	    if (url) {
 			if (url.substr(0,1) == "#") {
 				$('html, body').animate({
-		            scrollTop: $(url).offset().top
-		        }, 2000);
+		            scrollTop: $(url).offset().top,
+		        }, 1500);
 			} else {
-				$(".grid-container").fadeOut("fast").css("display: none");
+				$(".off-canvas-wrapper").fadeOut("fast").css("display: none");
 				document.location.href=url;
 			}
 		}
@@ -21,5 +21,5 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 window.onload = function() {
-	$(".grid-container").fadeIn().css("display: block");
+	$(".off-canvas-wrapper").fadeIn().css("display: block");
 };
