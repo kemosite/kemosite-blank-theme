@@ -35,4 +35,30 @@ function columns_shortcode_method($attributes, $content) {
 add_shortcode( 'columns', 'columns_shortcode_method' );
 add_shortcode( 'column', 'columns_shortcode_method' );
 
+function content_columns_shortcode_method($attributes, $content) {
+
+	$output = "";
+
+	$output .= '<div class="columns">' . "\n";
+	$output .= do_shortcode($content) . "\n";
+	$output .= '</div>';
+
+	return $output;
+
+}
+add_shortcode( 'content_columns', 'content_columns_shortcode_method' );
+
+function content_single_column_shortcode_method($attributes, $content) {
+
+	$output = "";
+
+	$output .= '<div class="single column">' . "\n";
+	$output .= do_shortcode($content) . "\n";
+	$output .= '</div>';
+
+	return $output;
+
+}
+add_shortcode( 'single_column', 'content_single_column_shortcode_method' );
+
 ?>

@@ -1,6 +1,12 @@
 @charset "utf-8";
 /* CSS Document */
 
+body { 
+    text-rendering: optimizeLegibility;
+    font-family: var(--body_copy_font_family_name);
+}
+body * { font-size: inherit; }
+
 /* HEADER GROUPS */
 h1 { font-size: 1.75em; font-weight: normal; }	/* Reserve for page titles */ 
 h2 { font-size: 1.5em; font-weight: normal; }	/* Subtitles */
@@ -9,9 +15,19 @@ h4 { font-size: 1em; font-weight: bold; }      /* [Normal] */
 h5 { font-size: .875em; font-weight: bold; }	
 h6 { font-size: .75em; font-weight: bold; }    /* [Small] */
 
-h1,h2,h3,h4,h5,h6 { margin-top: .5em; }
+h1,h2,h3,h4,h5,h6 { 
+    margin-top: 1.5em;
+    text-align: center;
+    font-family: var(--h1_h6_font_family_name);
+}
+
+.media-object h4 {
+    margin-top: 0;
+    text-align: left;
+}
+
 p,ul,ol { margin-bottom: .5em; }
-li { margin-top: .25em; margin-bottom: .25em; }
+li { margin-top: .5em; margin-bottom: .5em; line-height: 1.4em}
 
 /* [DEFAULT LINK FORMATTING] */
 
@@ -71,7 +87,26 @@ blockquote p {
      display:inline;
 }
 
-input, textarea, button { 
+input, input[type="search"], textarea, button, a.button, .button { 
     font-size: 1em;
     padding: .5em 1em;
+    font-family: var(--button_font_family_name);
+}
+
+div.section header h1 {
+    font-family: var(--header_font_family_name);
+}
+
+.button.small { font-size: .875em; }
+.button.medium { font-size: 1em; }
+.button.large { font-size: 1.25em; }
+
+div.columns p {
+    line-height: 1.5em;
+    vertical-align: baseline;
+    margin-bottom: 1.5em;
+}
+
+.copyright { 
+    text-align: center;
 }

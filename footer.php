@@ -9,49 +9,51 @@
 
 <footer>
 
+	<?php if (has_nav_menu( 'footer-column-one' ) || has_nav_menu( 'footer-column-two' )): ?>
+
 	<div class="grid-x expanded callout secondary">
 
-    <div class="small-6 large-3 cell">
-      <p class="lead">Offices</p>
-      <ul class="menu vertical">
-        <li><a href="#">One</a></li>
-        <li><a href="#">Two</a></li>
-        <li><a href="#">Three</a></li>
-        <li><a href="#">Four</a></li>
-      </ul>
-    </div>
+		<div class="small-12 medium-3 cell"></div>
 
-    <div class="small-6 large-3 cell">
-      <p class="lead">Solar Systems</p>
-      <ul class="menu vertical">
-        <li><a href="#">One</a></li>
-        <li><a href="#">Two</a></li>
-        <li><a href="#">Three</a></li>
-        <li><a href="#">Four</a></li>
-      </ul>
-    </div>
+	    <div class="small-12 medium-3 cell">
+	    	<?php if ( has_nav_menu( 'footer-column-one' ) ) : ?>
+		    	<?php wp_nav_menu( array(
+					'theme_location' => 'footer-column-one',
+					'menu_id' => 'footer-column-one',
+					'menu_class' => '',
+					'container' => 'nav',
+					'walker' => new footer_menu_walker()
+				) ); ?>
+			<?php endif; ?>
+	    </div>
 
-    <div class="small-6 large-3 cell">
-      <p class="lead">Contact</p>
-      <ul class="menu vertical">
-        <li><a href="#"><i class="fi-social-twitter"></i> Twitter</a></li>
-        <li><a href="#"><i class="fi-social-facebook"></i> Facebook</a></li>
-        <li><a href="#"><i class="fi-social-instagram"></i> Instagram</a></li>
-        <li><a href="#"><i class="fi-social-pinterest"></i> Pinterest</a></li>
-      </ul>
-    </div>
+	    <div class="small-12 medium-3 cell">
+	    	<?php if ( has_nav_menu( 'footer-column-two' ) ) : ?>
+		    	<?php wp_nav_menu( array(
+					'theme_location' => 'footer-column-two',
+					'menu_id' => 'footer-column-two',
+					'menu_class' => '',
+					'container' => 'nav',
+					'walker' => new footer_menu_walker()
+				) ); ?>
+			<?php endif; ?>
+	    </div>
 
-    <div class="small-6 large-3 cell">
-      <p class="lead">Offices</p>
-      <ul class="menu vertical">
-        <li><a href="#">One</a></li>
-        <li><a href="#">Two</a></li>
-        <li><a href="#">Three</a></li>
-        <li><a href="#">Four</a></li>
-      </ul>
-    </div>
+	    <div class="small-12 medium-3 cell"></div>
 
-  </div>
+	</div>
+
+	<?php endif; ?>
+
+	<?php if ( is_active_sidebar( 'copyright_widget' )): ?>
+
+	<div class="grid-x expanded callout secondary">
+    	<div class="small-12 cell">
+			<?php if ( is_active_sidebar( 'copyright_widget' ) ) : ?><?php dynamic_sidebar( 'copyright_widget' ); ?><?php endif; ?>
+    	</div>
+	</div>
+
+	<?php endif; ?>
 
 </footer>
 

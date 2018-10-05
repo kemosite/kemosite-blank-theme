@@ -18,7 +18,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
 
-<title><?php wp_title(); ?><?php bloginfo( 'name' ); ?></title>
+<title><?php wp_title(); ?><?php // bloginfo( 'name' ); ?></title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 
@@ -103,36 +103,51 @@
 
 	</div>
 
-	<?php /*
 	<!-- Start Top Bar -->
-	<div class="top-bar">
-		<div class="top-bar-left">
-			<div class="grid-x">
-				<div class="shrink cell">
-					<ul class="dropdown menu" data-dropdown-menu>
-						<li class="menu-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
-					</ul>
-				</div>
-				<?php if ( has_nav_menu( 'top-bar-menu' ) ) : ?>
-				<div class="auto cell">
-					<?php wp_nav_menu( array(
-						'theme_location' => 'top-bar-menu',
-						'menu_id' => 'top-bar-menu',
-						'menu_class' => 'dropdown menu',
-						'container' => 'nav',
-						'walker' => new mega_menu_walker()
-					) ); ?>
-				</div>
-				<?php endif; ?>
-			</div>
-		</div>
-		<div class="top-bar-right">
-			<div class="grid-x">
-				<div class="shrink cell">
-					<?php get_search_form(); ?>
-				</div>
-			</div>
-		</div>
+	<div class="top-bar main_screen_menu show-for-large stacked-for-large" id="responsive-menu">
+	  <div class="top-bar-left">
+	    <?php
+			if ( has_nav_menu( 'top-bar-menu' ) ) : ?>
+		    	<?php wp_nav_menu( array(
+					'theme_location' => 'top-bar-menu',
+					'menu_id' => 'top-bar-menu',
+					'menu_class' => 'dropdown menu',
+					'container' => 'nav',
+					'items_wrap' => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
+					'walker' => new mega_menu_walker()
+				) );
+			endif;
+		?>
+	  </div>
+	  <div class="top-bar-right">
+	    <?php get_search_form(); ?>
+	  </div>
 	</div>
 	<!-- End Top Bar -->
-	?>
+
+	<?php /*
+
+	<!-- Start Top Bar -->
+	<div class="top-bar main_screen_menu show-for-large" id="responsive-menu">
+	  <div class="top-bar-left">
+	    <ul class="dropdown menu" data-dropdown-menu>
+	      <li class="menu-text">Site Title</li>
+	      <li class="has-submenu">
+	        <a href="#0">One</a>
+	        <ul class="submenu menu vertical" data-submenu>
+	          <li><a href="#0">One</a></li>
+	          <li><a href="#0">Two</a></li>
+	          <li><a href="#0">Three</a></li>
+	        </ul>
+	      </li>
+	      <li><a href="#0">Two</a></li>
+	      <li><a href="#0">Three</a></li>
+	    </ul>
+	  </div>
+	  <div class="top-bar-right">
+	    <?php get_search_form(); ?>
+	  </div>
+	</div>
+	<!-- End Top Bar -->
+
+	*/ ?>

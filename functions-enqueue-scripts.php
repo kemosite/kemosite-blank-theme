@@ -65,6 +65,11 @@ function load_scripts_method() {
 	wp_register_script('foundation-app', get_stylesheet_directory_uri().'/foundation-6.4.2-custom/js/app.js', '', '6.4.2', 'true');
 	wp_enqueue_script('foundation-app');
 
+	// Graph.js
+	wp_deregister_script('graph-js');
+	wp_register_script('graph-js', get_stylesheet_directory_uri().'/js/vendor/Chart.min.js', '', '2.7.2');
+	wp_enqueue_script('graph-js');
+
 	// LESS
 	// add_action('wp_head', 'less_master_stylesheet');
 

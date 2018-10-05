@@ -80,4 +80,9 @@ function kemosite_blank_nextsteps_widget_display() {
 }
 add_action( 'wp_dashboard_setup', 'register_my_dashboard_widget' );
 
+function my_admin_footer_function() {
+	echo '<style>div#wpfooter { position: relative; }</style>';
+}
+add_action('admin_footer', 'my_admin_footer_function');
+
 ?>

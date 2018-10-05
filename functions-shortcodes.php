@@ -91,27 +91,31 @@ add_shortcode('accordion_item', 'accordion_item_shortcode_method');
 add_shortcode('accordion_full_width', 'accordion_item_shortcode_method');
 
 /* List shortcode */
-function unordered_list_shortcode_method($attributes, $content) {
+function list_shortcode_method($attributes, $content) {
+
+    if (@$attributes['list_id'] && @$attributes['list_id'] !== NULL): @$list_id = $attributes['list_id']; endif;
+    @$columns = ($attributes['columns'] > 1) ? $attributes['columns'] : 1;
 
     $output = "";
-    $output .= '<ul>' . "\n";
+
+    $output .= '<style>';
+    $output .= '#list_'.$list_id.' ul, #list_'.$list_id.' ol { ';
+    $output .= 'columns: '.$columns.' auto;';
+    $output .= 'margin-top: 1em;';
+    $output .= '}';
+     $output .= '#list_'.$list_id.' ul li, #list_'.$list_id.' ol li { ';
+    $output .= 'margin-top: 0';
+    $output .= '}';
+    $output .= '</style>';
+
+    $output .= '<div id="list_'.$list_id.'">';
     $output .= do_shortcode($content) . "\n";
-    $output .= '</ul>' . "\n";
+    $output .= '</div>';
     return $output;
 
 }
-add_shortcode('unordered_list', 'unordered_list_shortcode_method');
-
-function ordered_list_shortcode_method($attributes, $content) {
-
-    $output = "";
-    $output .= '<ul>' . "\n";
-    $output .= do_shortcode($content) . "\n";
-    $output .= '</ul>' . "\n";
-    return $output;
-
-}
-add_shortcode('ordered_list', 'ordered_list_shortcode_method');
+add_shortcode('unordered_list', 'list_shortcode_method');
+add_shortcode('ordered_list', 'list_shortcode_method');
 
 /* Tabs shortcode */
 function tabs_shortcode_method($attributes, $content) {
@@ -279,6 +283,6 @@ require_once ("functions-shortcodes-callouts.php");
 require_once ("functions-shortcodes-forms.php");
 require_once ("functions-shortcodes-buttons.php");
 
-// require_once ("functions-shortcodes-central.php"); // Rewriting Central Shortcodes as Foundation functions.
+require_once ("functions-shortcodes-central.php"); // Rewriting Central Shortcodes as Foundation functions.
 
 ?>

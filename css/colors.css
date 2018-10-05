@@ -12,3 +12,99 @@
 @black: @black-70;
 @blue: #2C5F72;
 */
+
+body {
+	color: var(--black-tint);
+}
+
+*::selection {
+	background-color: var(--primary_invert_color);
+	color: white;
+}
+
+.off-canvas {
+	/* filter: brightness(120%); */
+	background-color: var(--light_black_tint);
+}
+
+.top-bar, .top-bar ul {
+	background-color: #fff;
+}
+
+.callout {
+	background-color: #fff;
+	border: 1px solid var(--primary_color);
+	border-radius: .25rem;
+}
+
+.callout.secondary {
+	background-color: #fff;
+	border: 1px solid var(--primary_bright_color);
+}
+
+div.section { 
+	background-color: var(--header_background_color);
+	color: var(--header_font_color);
+}
+
+h1,h2,h3,h4,h5,h6 { color: var(--primary_color); }
+
+h1 a, h1 a:link,
+h2 a, h2 a:link,
+h3 a, h3 a:link,
+h4 a, h4 a:link,
+h5 a, h5 a:link,
+h6 a, h6 a:link,
+p a, p a:link,
+li a, li a:link {
+	color: var(--primary_dark_color);
+}
+
+h1 a:hover, h1 a:focus,
+h2 a:hover, h2 a:focus,
+h3 a:hover, h3 a:focus,
+h4 a:hover, h4 a:focus,
+h5 a:hover, h5 a:focus,
+h6 a:hover, h6 a:focus,
+p a:hover, p a:focus,
+li a:hover, li a:focus {
+	color: var(--primary_color);
+}
+
+table tbody tr:nth-child(2n) {
+	background-color: var(--light_black_tint);
+}
+
+table tbody, table tfoot, table thead {
+	border: 1px solid var(--light_black_tint);
+	background-color: white;
+}
+
+li.menu-item a:hover {
+	background-color: var(--primary_bright_color);
+	color: var(--primary_font_auto_color);
+}
+
+p a.button, li.product .button, .button, a.button, button, button.button, a.close-button {
+	-webkit-box-shadow: 0 1px 0 #0f0f0f;
+	box-shadow: 0 1px 0 #0f0f0f;
+	-webkit-transition: -webkit-box-shadow ease-in-out 130ms;
+	transition: -webkit-box-shadow ease-in-out 130ms;
+	transition: box-shadow ease-in-out 130ms;
+	transition: box-shadow ease-in-out 130ms,-webkit-box-shadow ease-in-out 130ms;
+	text-transform: uppercase;
+	line-height: 1.5em;
+	background-color: var(--primary_dark_color);
+	color: var(--primary_font_auto_color);
+}
+
+p a.button:hover, p a.button:focus, li.product .button:hover, li.product .button:focus, .button:hover, .button:focus, a.button:hover, a.button:focus, button:hover, button:focus, button.button:hover, button.button:focus, a.close-button:hover, a.close-button:focus {
+	-webkit-box-shadow: 0 2px 0 #0f0f0f;
+	box-shadow: 0 2px 0 #0f0f0f;
+	background-color: var(--primary_bright_color);
+}
+
+.dropdown.menu li.is-active > a { color: var(--primary_color); }
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after { border-color: var(--primary_dark_color) transparent transparent; }
+
+hr { border-bottom: 1px solid var(--primary_bright_color); }
