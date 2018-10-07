@@ -1,3 +1,4 @@
+/*
 document.addEventListener("DOMContentLoaded", function() {
 
 	$("a").click( function (event) {
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 });
+*/
 
 window.onload = function() {
 	$(".off-canvas-wrapper").fadeIn().css("display: block");

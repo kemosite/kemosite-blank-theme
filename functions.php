@@ -5,17 +5,17 @@ define( 'GITHUB_UPDATER_OVERRIDE_DOT_ORG', true ); // Override Dot Org will skip
 
 /* [Declare Depedencies] */
 function kemosite_blank_theme_dependencies() {
-  
+ 
+	// Check for github-updater
+	if (!is_plugin_active('github-updater/github-updater.php')):
+		echo '<div class="error"><p>Warning: This theme needs the github-updater plugin to function.</p></div>';
+	endif;
+
 	// Check for kemosite-typography-plugin
 	if (!is_plugin_active('kemosite-typography-plugin/index.php')):
 		echo '<div class="error"><p>Warning: This theme needs the kemosite-typography-plugin to function.</p></div>';
 	endif;
 	//plugin is activated
-
-	// Check for github-updater
-	if (!is_plugin_active('github-updater/github-updater.php')):
-		echo '<div class="error"><p>Warning: This theme needs the github-updater plugin to function.</p></div>';
-	endif;
 
 }
 add_action( 'admin_notices', 'kemosite_blank_theme_dependencies' );
@@ -586,7 +586,7 @@ add_action( 'customize_preview_init', 'cd_customizer' );
 function cd_customizer() {
 	wp_enqueue_script(
 		  'cd_customizer',
-		  get_template_directory_uri() . '/js/customizer.js',
+		  get_stylesheet_directory_uri() . '/js/customizer.js',
 		  array( 'jquery','customize-preview' ),
 		  '',
 		  true

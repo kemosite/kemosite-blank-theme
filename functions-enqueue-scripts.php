@@ -79,9 +79,15 @@ function load_scripts_method() {
 	wp_enqueue_script('less');
 	*/
 
+	// JQuery
 	wp_deregister_script('my-jquery');
 	wp_register_script('my-jquery', get_stylesheet_directory_uri().'/js/my-jquery.js', '', '4.8.1', 'true');
 	wp_enqueue_script('my-jquery');
+
+	// Mediaelement
+	wp_deregister_script('mediaelement');
+	wp_register_script('mediaelement', get_stylesheet_directory_uri().'/mediaelement-master/build/mediaelement-and-player.min.js', '', '4.2.9', 'true');
+	wp_enqueue_script('mediaelement');
 		
 	// Add menus
 	// add_action( 'init', 'register_my_menus' );	

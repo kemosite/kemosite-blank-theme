@@ -39,6 +39,7 @@ function my_customize_register( $wp_customize ) {
 	$brighten_raw_perc = (max(1, 255 - $yiq) / 255);
 	$darken_raw_perc = (max(1, $yiq - 1) / 255);
 
+	/*
 	echo '<script>' . 
 	'console.log(' . json_encode("YIQ: ".$yiq) . ');' . 
 	'console.log(' . json_encode("Bright Threshold: ".$bright_threshold) . ');' . 
@@ -46,6 +47,7 @@ function my_customize_register( $wp_customize ) {
 	'console.log(' . json_encode("Dark Threshold: ".$bright_threshold) . ');' . 
 	'console.log(' . json_encode("Darken Raw Perc: ".$brighten_raw_perc) . ');' . 
 	'</script>';
+	*/
 
 	$bright_primary_r_hex = dechex(min(255, round($primary_parse_r + ($primary_parse_r * $brighten_raw_perc))));
 	$bright_primary_g_hex = dechex(min(255, round($primary_parse_g + ($primary_parse_g * $brighten_raw_perc))));
@@ -475,8 +477,10 @@ function mytheme_output_mod_options_console() {
 add_action( 'after_setup_theme', 'mytheme_output_mod_options_console' );
 */
 
+/*
 echo '<script>' . 
 'console.log(' . json_encode(get_theme_mods()) . ');' . 
 '</script>';
+*/
 
 ?>
