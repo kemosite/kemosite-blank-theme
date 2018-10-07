@@ -540,6 +540,13 @@ function cd_customizer_css() {
 	echo '<link href="https://fonts.googleapis.com/css?family='.$button_font.'" rel="stylesheet">';
 	$button_font_family_name = explode(":", $button_font);
 
+	/*
+	$image = wp_get_attachment_image_src(get_theme_mod('custom_logo'));	
+	echo '<script>' . 
+	'console.log(' . json_encode($image) . ');' . 
+	'</script>';
+	*/
+
 
 ?>
 

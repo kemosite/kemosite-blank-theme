@@ -5,7 +5,11 @@
  * Displays all of the <head> section and everything up till <body>
  *
  * Opens "grid-container"
+ *
+ * Defines the logo source.
+ *
  */
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js no-svg">
@@ -99,55 +103,52 @@
 	<div class="main_mobile_menu hide-for-large">
 
 		<button type="button" class="button large" data-toggle="off_canvas_mobile_menu"><i class="fi-list"></i></button>
+		<div class="mobile logo position"><img src="<?php echo wp_get_attachment_image_src(get_theme_mod('custom_logo'))[0]; ?>"></div>
 		<button type="button" class="button large float-right" data-toggle="off_canvas_mobile_search"><i class="fi-magnifying-glass"></i></button>
 
 	</div>
 
 	<!-- Start Top Bar -->
 	<div class="top-bar main_screen_menu show-for-large stacked-for-large" id="responsive-menu">
-	  <div class="top-bar-left">
-	    <?php
-			if ( has_nav_menu( 'top-bar-menu' ) ) : ?>
-		    	<?php wp_nav_menu( array(
-					'theme_location' => 'top-bar-menu',
-					'menu_id' => 'top-bar-menu',
-					'menu_class' => 'dropdown menu',
-					'container' => 'nav',
-					'items_wrap' => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
-					'walker' => new mega_menu_walker()
-				) );
-			endif;
-		?>
-	  </div>
-	  <div class="top-bar-right">
-	    <?php get_search_form(); ?>
-	  </div>
+		<div class="top-bar-left">
+			
+			<nav class="menu-test-menu-container">
+
+				<ul id="top-bar-menu" class="dropdown menu" data-dropdown-menu>
+
+					<li class="menu-text display logo position"><img src="<?php echo wp_get_attachment_image_src(get_theme_mod('custom_logo'))[0]; ?>"></li>
+			
+					<?php
+					if ( has_nav_menu( 'top-bar-menu' ) ) :
+
+						/*
+						wp_nav_menu( array(
+							'theme_location' => 'top-bar-menu',
+							'menu_id' => 'top-bar-menu',
+							'menu_class' => 'dropdown menu',
+							'container' => 'nav',
+							'items_wrap' => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
+							'walker' => new mega_menu_walker()
+						) );
+						*/
+
+						wp_nav_menu( array(
+							'theme_location' => 'top-bar-menu',
+							'container' => '',
+							'items_wrap' => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
+							'walker' => new mega_menu_walker()
+						) );
+
+					endif;
+					?>
+
+				</ul>
+
+			</nav>
+		</div>
+		<div class="top-bar-right">
+			<?php get_search_form(); ?>
+		</div>
 	</div>
 	<!-- End Top Bar -->
-
-	<?php /*
-
-	<!-- Start Top Bar -->
-	<div class="top-bar main_screen_menu show-for-large" id="responsive-menu">
-	  <div class="top-bar-left">
-	    <ul class="dropdown menu" data-dropdown-menu>
-	      <li class="menu-text">Site Title</li>
-	      <li class="has-submenu">
-	        <a href="#0">One</a>
-	        <ul class="submenu menu vertical" data-submenu>
-	          <li><a href="#0">One</a></li>
-	          <li><a href="#0">Two</a></li>
-	          <li><a href="#0">Three</a></li>
-	        </ul>
-	      </li>
-	      <li><a href="#0">Two</a></li>
-	      <li><a href="#0">Three</a></li>
-	    </ul>
-	  </div>
-	  <div class="top-bar-right">
-	    <?php get_search_form(); ?>
-	  </div>
-	</div>
-	<!-- End Top Bar -->
-
-	*/ ?>
+	

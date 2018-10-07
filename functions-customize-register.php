@@ -467,20 +467,12 @@ function my_customize_register( $wp_customize ) {
 add_action('customize_register','my_customize_register');
 
 /* [Output Theme Mod Options] */
-/*
 function mytheme_output_mod_options_console() {
 	echo '<script>' . 
 	'console.log(' . json_encode(get_theme_mods()) . ');' . 
-	'console.log(' . json_encode(get_theme_mod('header_image')) . ');' . 
+	'console.log(' . json_encode(get_theme_mod('custom_logo')) . ');' . 
 	'</script>';
 }
-add_action( 'after_setup_theme', 'mytheme_output_mod_options_console' );
-*/
-
-/*
-echo '<script>' . 
-'console.log(' . json_encode(get_theme_mods()) . ');' . 
-'</script>';
-*/
+// add_action( 'after_setup_theme', 'mytheme_output_mod_options_console' );
 
 ?>
