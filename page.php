@@ -101,7 +101,7 @@
 
 	</main>
 
-	<hr>
+	<!-- <hr> -->
 
 <?php endwhile; ?>
 
