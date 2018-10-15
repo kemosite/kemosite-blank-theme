@@ -76,7 +76,7 @@ if ( have_posts() ) :
 
 				</article>
 
-				<hr>
+				<!-- <hr> -->
 
 				<?php				
 
