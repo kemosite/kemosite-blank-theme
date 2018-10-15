@@ -59,6 +59,7 @@ Place into a layout grid.
 		max-width: 100%;
 	}
 
+<<<<<<< HEAD
 	.card { height: 100%; }
 
 	.cropped.image {
@@ -73,6 +74,36 @@ Place into a layout grid.
 	    opacity:0
 	}
 
+=======
+	ul.products li.product,
+	.woocommerce ul.products li.product,
+	.woocommerce-page ul.products li.product,
+	.gallery-item,
+	.flex-item {
+		flex: 0 1 auto;
+		align-self: stretch;
+		margin: var(--set_column_margin)%;
+		float: none;
+		width: 100%;
+		max-width: var(--set_column_width)%;
+		text-align: center;
+	}
+
+	.card { height: 100%; }
+
+	.cropped.image {
+	    background-position:center center;
+	    background-repeat:no-repeat;
+	    overflow:hidden;
+	    margin: 1em auto;
+	}
+	.cropped.image img {
+	    min-height:100%;
+	    min-width:100%;
+	    opacity:0
+	}
+
+>>>>>>> origin/develop-4.9.8
 	.fb-comments.fb_iframe_widget {
 		text-align: center;
 		display: block;
@@ -87,12 +118,15 @@ Place into a layout grid.
 
 	.contact-form input[type="email"], .contact-form input[type="text"], .contact-form input[type="url"] { width: 100% !important;	}
 
+<<<<<<< HEAD
 	a.button {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
 
+=======
+>>>>>>> origin/develop-4.9.8
 	footer {
 		display: flex;
 		flex-flow: row wrap;
@@ -926,6 +960,7 @@ Place into a layout grid.
 		margin: 0;
 	}
 
+<<<<<<< HEAD
 	.woocommerce-page.columns-3 ul.products li.product, .woocommerce.columns-3 ul.products li.product
 
 	ul.products li.product,
@@ -942,6 +977,8 @@ Place into a layout grid.
 		text-align: center;
 	}
 
+=======
+>>>>>>> origin/develop-4.9.8
 	.media-object {
 		width: 59rem;
 		width: 59ch;
