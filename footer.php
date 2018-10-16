@@ -7,50 +7,38 @@
  */
 ?>
 
+<hr>
+
 <footer>
 
-	<?php if (has_nav_menu( 'footer-column-one' ) || has_nav_menu( 'footer-column-two' )): ?>
+	<?php if (has_nav_menu( 'footer-menu' ) || is_active_sidebar( 'copyright_widget' )): ?>
 
-	<div class="grid-x expanded callout secondary">
+	<div class="grid-x expanded footer">
 
-		<div class="small-12 medium-3 cell"></div>
-
-	    <div class="small-12 medium-3 cell">
-	    	<?php if ( has_nav_menu( 'footer-column-one' ) ) : ?>
-		    	<?php wp_nav_menu( array(
-					'theme_location' => 'footer-column-one',
-					'menu_id' => 'footer-column-one',
-					'menu_class' => '',
-					'container' => 'nav',
-					'walker' => new footer_menu_walker()
-				) ); ?>
-			<?php endif; ?>
-	    </div>
-
-	    <div class="small-12 medium-3 cell">
-	    	<?php if ( has_nav_menu( 'footer-column-two' ) ) : ?>
-		    	<?php wp_nav_menu( array(
-					'theme_location' => 'footer-column-two',
-					'menu_id' => 'footer-column-two',
-					'menu_class' => '',
-					'container' => 'nav',
-					'walker' => new footer_menu_walker()
-				) ); ?>
-			<?php endif; ?>
-	    </div>
-
-	    <div class="small-12 medium-3 cell"></div>
-
-	</div>
-
-	<?php endif; ?>
-
-	<?php if ( is_active_sidebar( 'copyright_widget' )): ?>
-
-	<div class="grid-x expanded callout secondary">
-    	<div class="small-12 cell">
-			<?php if ( is_active_sidebar( 'copyright_widget' ) ) : ?><?php dynamic_sidebar( 'copyright_widget' ); ?><?php endif; ?>
+		<?php if ( is_active_sidebar( 'copyright_widget' ) ) : ?>
+		<div class="cell">
+			<?php dynamic_sidebar( 'copyright_widget' ); ?>
     	</div>
+    	<?php endif; ?>
+
+    	<?php if ( has_nav_menu( 'footer-menu' ) ) : ?>
+		<div class="cell">
+	    	<?php wp_nav_menu( array(
+				'theme_location' => 'footer-menu',
+				'menu_id' => 'footer-menu',
+				'menu_class' => 'footer-menu',
+				'container' => '',
+				'walker' => new footer_menu_walker()
+			) ); ?>
+		</div>
+		<?php endif; ?>
+
+		<?php if ( is_active_sidebar( 'social_widget' ) ) : ?>
+		<div class="cell">
+			<?php dynamic_sidebar( 'social_widget' ); ?>
+    	</div>
+    	<?php endif; ?>
+
 	</div>
 
 	<?php endif; ?>
