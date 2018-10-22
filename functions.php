@@ -561,7 +561,11 @@ function cd_customizer_css() {
 
 	/* [COLUMNS] */
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$thumbnail_column_count = esc_attr( wc_get_loop_prop( 'columns' ) ); // Careful, requires WooCommerce to function.
+=======
+	$thumbnail_column_count = esc_attr( wc_get_loop_prop( 'columns' ) );
+>>>>>>> develop-4.9.8
 =======
 	$thumbnail_column_count = esc_attr( wc_get_loop_prop( 'columns' ) );
 >>>>>>> develop-4.9.8
@@ -571,12 +575,15 @@ function cd_customizer_css() {
 	$set_double_column_width = ($thumbnail_column_width * 2) - ($set_column_margin * 2);
 	$set_full_column_width = 100 - ($set_column_margin * 2);
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$set_double_column_width = ($thumbnail_column_width * 2) - ($set_column_margin * 2);
 	$set_full_column_width = 100 - ($set_column_margin * 2);
 	$set_double_column_width = ($thumbnail_column_width * 2) - ($set_column_margin * 2);
 	$set_full_column_width = 100 - ($set_column_margin * 2);
 	?>
 =======
+=======
+>>>>>>> develop-4.9.8
 
 ?>
 >>>>>>> develop-4.9.8
@@ -610,11 +617,15 @@ function cd_customizer_css() {
 		--set_double_column_width: <?php echo $set_double_column_width; ?>%;
 		--set_full_column_width: <?php echo $set_full_column_width; ?>%;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		--set_column_margin: <?php echo $set_column_margin; ?>;
 		--set_column_width: <?php echo $set_column_width; ?>;
 		--set_double_column_width: <?php echo $set_double_column_width; ?>;
 		--set_full_column_width: <?php echo $set_full_column_width; ?>;
 		
+=======
+
+>>>>>>> develop-4.9.8
 =======
 
 >>>>>>> develop-4.9.8
