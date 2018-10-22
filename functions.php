@@ -445,7 +445,7 @@ class footer_menu_walker extends Walker_Nav_Menu {
     }
 }
 
-function copyright_widget_init() {
+function kemosite_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => 'Copyright Widget',
@@ -456,8 +456,17 @@ function copyright_widget_init() {
 		'after_title'   => '</span>'
 	) );
 
+	register_sidebar( array(
+		'name'          => 'Social Widget',
+		'id'            => 'social_widget',
+		'before_widget' => '<div class="social media">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<span style="display: none;">',
+		'after_title'   => '</span>'
+	) );
+
 }
-add_action( 'widgets_init', 'copyright_widget_init' );
+add_action( 'widgets_init', 'kemosite_widgets_init' );
 
 function register_my_menus() {
 
@@ -469,6 +478,9 @@ function register_my_menus() {
 	register_nav_menu( 'off-canvas-menu', __( 'Off Canvas Menu', 'kemosite-blank-theme' ) );
 	register_nav_menu( 'footer-column-one', __( 'Footer Column One', 'kemosite-blank-theme' ) );
 	register_nav_menu( 'footer-column-two', __( 'Footer Column Two', 'kemosite-blank-theme' ) );
+	register_nav_menu( 'footer-menu', __( 'Footer Menu', 'kemosite-blank-theme' ) );
+	register_nav_menu( 'off-canvas-footer-menu', __( 'Off Canvas Footer Menu', 'kemosite-blank-theme' ) );
+	
 
 }
 add_action( 'after_setup_theme', 'register_my_menus' );
@@ -540,13 +552,20 @@ function cd_customizer_css() {
 	echo '<link href="https://fonts.googleapis.com/css?family='.$button_font.'" rel="stylesheet">';
 	$button_font_family_name = explode(":", $button_font);
 
-	/*
-	$image = wp_get_attachment_image_src(get_theme_mod('custom_logo'));	
-	echo '<script>' . 
-	'console.log(' . json_encode($image) . ');' . 
-	'</script>';
-	*/
 
+
+	/* [HEADER IMAGE] */
+	$default_header_image = get_theme_mod('header_image');
+
+
+
+	/* [COLUMNS] */
+	$thumbnail_column_count = esc_attr( wc_get_loop_prop( 'columns' ) );
+	$thumbnail_column_width = 100 / $thumbnail_column_count;
+	$set_column_margin = 1; // %
+	$set_column_width = $thumbnail_column_width - ($set_column_margin * 2);
+	$set_double_column_width = ($thumbnail_column_width * 2) - ($set_column_margin * 2);
+	$set_full_column_width = 100 - ($set_column_margin * 2);
 
 ?>
 
@@ -572,11 +591,23 @@ function cd_customizer_css() {
 		--body_copy_font_family_name: <?php echo "'" . urldecode($body_copy_font_family_name[0]) . "', serif"; ?>;
 		--button_font_family_name: <?php echo "'" . urldecode($button_font_family_name[0]) . "', sans-serif"; ?>;
 
+		--default_header_image: <?php echo $default_header_image; ?>;
+
+		--set_column_margin: <?php echo $set_column_margin; ?>%;
+		--set_column_width: <?php echo $set_column_width; ?>%;
+		--set_double_column_width: <?php echo $set_double_column_width; ?>%;
+		--set_full_column_width: <?php echo $set_full_column_width; ?>%;
+
 	}
 
-	/*
-	hr { color: <?php echo $primary_bright_color; ?>; }
-	*/
+	div.section { 
+		background-image: url(<?php echo $default_header_image; ?>);
+		background-position: center; /* Center the image */
+		background-repeat: no-repeat; /* Do not repeat the image */
+		background-size: cover; /* Resize the background image to cover the entire container */
+		/* filter: saturate(50%); */
+	}
+	
 
 	</style>
 
