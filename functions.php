@@ -564,8 +564,21 @@ function cd_customizer_css() {
 	$thumbnail_column_width = 100 / $thumbnail_column_count;
 	$set_column_margin = 1; // %
 	$set_column_width = $thumbnail_column_width - ($set_column_margin * 2);
+<<<<<<< HEAD
 	$set_double_column_width = ($thumbnail_column_width * 2) - ($set_column_margin * 2);
 	$set_full_column_width = 100 - ($set_column_margin * 2);
+=======
+<<<<<<< HEAD
+	$set_double_column_width = ($thumbnail_column_width * 2) - ($set_column_margin * 2);
+	$set_full_column_width = 100 - ($set_column_margin * 2);
+=======
+<<<<<<< HEAD
+	$set_double_column_width = ($thumbnail_column_width * 2) - ($set_column_margin * 2);
+	$set_full_column_width = 100 - ($set_column_margin * 2);
+=======
+>>>>>>> origin/develop-4.9.8
+>>>>>>> fb6517e0e203ca0104993e72310c781951e4ca51
+>>>>>>> develop-4.9.8
 
 ?>
 
@@ -593,10 +606,26 @@ function cd_customizer_css() {
 
 		--default_header_image: <?php echo $default_header_image; ?>;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> develop-4.9.8
 		--set_column_margin: <?php echo $set_column_margin; ?>%;
 		--set_column_width: <?php echo $set_column_width; ?>%;
 		--set_double_column_width: <?php echo $set_double_column_width; ?>%;
 		--set_full_column_width: <?php echo $set_full_column_width; ?>%;
+<<<<<<< HEAD
+=======
+=======
+		--set_column_margin: <?php echo $set_column_margin; ?>;
+		--set_column_width: <?php echo $set_column_width; ?>;
+<<<<<<< HEAD
+		--set_double_column_width: <?php echo $set_double_column_width; ?>;
+		--set_full_column_width: <?php echo $set_full_column_width; ?>;
+=======
+>>>>>>> origin/develop-4.9.8
+>>>>>>> fb6517e0e203ca0104993e72310c781951e4ca51
+>>>>>>> develop-4.9.8
 
 	}
 
