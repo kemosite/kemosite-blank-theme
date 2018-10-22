@@ -92,8 +92,15 @@ function load_scripts_method() {
 	// Add menus
 	// add_action( 'init', 'register_my_menus' );	
 
-	//  Remove the generator from the head output.
-	add_filter('the_generator', create_function('', 'return "";'));
+	/* [REMOVE THE GENERATOR FROM THE HEAD OUTPUT] */
+	remove_action('wp_head', 'wp_generator');
+	
+	/*
+	function remove_version_info() {
+	     return '';
+	}
+	add_filter('the_generator', 'remove_version_info');
+	*/
 	
 	// Add image thumbnail to RSS feed.
 	add_filter('the_content_feed', 'rss_post_thumbnail');
