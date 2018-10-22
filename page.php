@@ -46,9 +46,13 @@
 
 			<article>
 
-				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id($latest_post->object_id), 'single-post-thumbnail' ); ?>
-				<?php if ($image): ?>
-					<div><img style="width: 100%;" src="<?php echo $image[0]; ?>"></div>
+				<?php
+				$image = wp_get_attachment_image_src( get_post_thumbnail_id($latest_post->object_id), 'single-post-thumbnail');
+				$image_srcset = wp_get_attachment_image_srcset( get_post_thumbnail_id($latest_post->object_id), 'single-post-thumbnail', wp_get_attachment_metadata($latest_post->object_id) );
+				$image_sizes = wp_get_attachment_image_sizes( get_post_thumbnail_id($latest_post->object_id), 'single-post-thumbnail', wp_get_attachment_metadata($latest_post->object_id) );
+				?>
+				<?php if ($image && $image_srcset && $image_sizes): ?>
+					<div><img style="width: 100%;" src="<?php echo $image[0]; ?>" srcset="<?php echo esc_attr( $image_srcset ); ?>" sizes="<?php echo esc_attr( $image_sizes ); ?>"></div>
 				<?php endif; ?>
 
 				<header>
@@ -101,7 +105,7 @@
 
 	</main>
 
-	<hr>
+	<!-- <hr> -->
 
 <?php endwhile; ?>
 

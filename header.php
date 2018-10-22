@@ -103,7 +103,7 @@
 	<div class="main_mobile_menu hide-for-large">
 
 		<button type="button" class="button large" data-toggle="off_canvas_mobile_menu"><i class="fi-list"></i></button>
-		<div class="mobile logo position"><img src="<?php echo wp_get_attachment_image_src(get_theme_mod('custom_logo'))[0]; ?>"></div>
+		<div class="mobile logo position"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo wp_get_attachment_image_src(get_theme_mod('custom_logo'))[0]; ?>"></A></div>
 		<button type="button" class="button large float-right" data-toggle="off_canvas_mobile_search"><i class="fi-magnifying-glass"></i></button>
 
 	</div>
@@ -116,7 +116,7 @@
 
 				<ul id="top-bar-menu" class="dropdown menu" data-dropdown-menu>
 
-					<li class="menu-text display logo position"><img src="<?php echo wp_get_attachment_image_src(get_theme_mod('custom_logo'))[0]; ?>"></li>
+					<li class="menu-text display logo position"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo wp_get_attachment_image_src(get_theme_mod('custom_logo'))[0]; ?>"></a></li>
 			
 					<?php
 					if ( has_nav_menu( 'top-bar-menu' ) ) :
@@ -135,6 +135,7 @@
 						wp_nav_menu( array(
 							'theme_location' => 'top-bar-menu',
 							'container' => '',
+							'menu_class' => 'dropdown menu',
 							'items_wrap' => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
 							'walker' => new mega_menu_walker()
 						) );

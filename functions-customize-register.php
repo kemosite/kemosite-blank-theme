@@ -7,10 +7,13 @@ function my_customize_register( $wp_customize ) {
 	$primary = '#5F4B8B';  // Colour of the year, 2018
 
 	/* [REMOVE UNNEEDED CONTROLS] */
+	/*
 	$wp_customize->remove_control("header_image");
 	$wp_customize->remove_section("header_image");
+	*/
 	$wp_customize->remove_control("color");
 	$wp_customize->remove_section("colors");
+	
 
 	// Calculate 70% black
 	$black_70 = round(255 - (255 * .65));
@@ -470,7 +473,7 @@ add_action('customize_register','my_customize_register');
 function mytheme_output_mod_options_console() {
 	echo '<script>' . 
 	'console.log(' . json_encode(get_theme_mods()) . ');' . 
-	'console.log(' . json_encode(get_theme_mod('custom_logo')) . ');' . 
+	// 'console.log(' . json_encode(get_theme_mod('header_image')) . ');' . 
 	'</script>';
 }
 // add_action( 'after_setup_theme', 'mytheme_output_mod_options_console' );
