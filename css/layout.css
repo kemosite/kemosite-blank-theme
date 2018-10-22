@@ -58,6 +58,7 @@ Place into a layout grid.
 		margin: 1em auto;
 		max-width: 100%;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	}
 
 	.card { height: 100%; }
@@ -96,6 +97,10 @@ Place into a layout grid.
 =======
 <<<<<<< HEAD
 >>>>>>> fb6517e0e203ca0104993e72310c781951e4ca51
+=======
+	}
+
+>>>>>>> develop-4.9.8
 	.card { height: 100%; }
 
 	.cropped.image {
@@ -108,6 +113,7 @@ Place into a layout grid.
 	    min-height:100%;
 	    min-width:100%;
 	    opacity:0
+<<<<<<< HEAD
 <<<<<<< HEAD
 	}
 
@@ -145,6 +151,10 @@ Place into a layout grid.
 
 >>>>>>> origin/develop-4.9.8
 >>>>>>> fb6517e0e203ca0104993e72310c781951e4ca51
+=======
+	}
+
+>>>>>>> develop-4.9.8
 	.fb-comments.fb_iframe_widget {
 		text-align: center;
 		display: block;
@@ -153,6 +163,7 @@ Place into a layout grid.
 		max-width: 59rem;
 		max-width: 59ch;
 		width: 100%;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	}
 
@@ -214,6 +225,33 @@ Place into a layout grid.
 =======
 >>>>>>> fb6517e0e203ca0104993e72310c781951e4ca51
 >>>>>>> develop-4.9.8
+=======
+	}
+
+	form.contact-form {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.contact-form select { padding-right: 2em; }
+
+	.contact-form input[type="email"], .contact-form input[type="text"], .contact-form input[type="url"] { width: 100% !important;	}
+
+	a.button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	footer {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		margin: 1em 0;
+		justify-content: flex-start;
+	}
+
+>>>>>>> develop-4.9.8
 	footer div.footer {
 		width: 100%;
 		justify-content: center;
@@ -225,12 +263,16 @@ Place into a layout grid.
 		margin-left: 0;
 		padding-left: 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		display: flex;
 =======
 <<<<<<< HEAD
 		display: flex;
 =======
 >>>>>>> fb6517e0e203ca0104993e72310c781951e4ca51
+>>>>>>> develop-4.9.8
+=======
+		display: flex;
 >>>>>>> develop-4.9.8
 	}
 
@@ -534,13 +576,17 @@ Place into a layout grid.
 		flex: 0 1 auto;
 		align-self: stretch;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> develop-4.9.8
+=======
 >>>>>>> develop-4.9.8
 		margin: var(--set_column_margin);
 		float: none;
 		width: 100%;
 		max-width: var(--set_full_column_width);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -549,6 +595,8 @@ Place into a layout grid.
 		width: 100%;
 		max-width: var(--set_full_column_width)%;
 >>>>>>> fb6517e0e203ca0104993e72310c781951e4ca51
+>>>>>>> develop-4.9.8
+=======
 >>>>>>> develop-4.9.8
 		text-align: center;
 	}
@@ -607,13 +655,17 @@ Place into a layout grid.
 		flex: 0 1 auto;
 		align-self: stretch;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> develop-4.9.8
+=======
 >>>>>>> develop-4.9.8
 		margin: var(--set_column_margin);
 		float: none;
 		width: 100%;
 		max-width: var(--set_full_column_width);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -622,6 +674,8 @@ Place into a layout grid.
 		width: 100%;
 		max-width: var(--set_full_column_width)%;
 >>>>>>> fb6517e0e203ca0104993e72310c781951e4ca51
+>>>>>>> develop-4.9.8
+=======
 >>>>>>> develop-4.9.8
 		text-align: center;
 	}
@@ -667,12 +721,16 @@ Place into a layout grid.
 
 	.mailpoet_form input.mailpoet_text,
 <<<<<<< HEAD
+<<<<<<< HEAD
 	form.contact-form,
 =======
 <<<<<<< HEAD
 	form.contact-form,
 =======
 >>>>>>> fb6517e0e203ca0104993e72310c781951e4ca51
+>>>>>>> develop-4.9.8
+=======
+	form.contact-form,
 >>>>>>> develop-4.9.8
 	.contact-form input[type="email"], .contact-form input[type="text"], .contact-form input[type="url"],
 	select,
@@ -742,13 +800,17 @@ Place into a layout grid.
 		flex: 0 1 auto;
 		align-self: stretch;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> develop-4.9.8
+=======
 >>>>>>> develop-4.9.8
 		margin: var(--set_column_margin);
 		float: none;
 		width: 100%;
 		max-width: var(--set_double_column_width);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -757,6 +819,8 @@ Place into a layout grid.
 		width: 100%;
 		max-width: var(--set_double_column_width)%;
 >>>>>>> fb6517e0e203ca0104993e72310c781951e4ca51
+>>>>>>> develop-4.9.8
+=======
 >>>>>>> develop-4.9.8
 		text-align: center;
 	}
@@ -801,12 +865,16 @@ Place into a layout grid.
 
 	.mailpoet_form input.mailpoet_text,
 <<<<<<< HEAD
+<<<<<<< HEAD
 	form.contact-form,
 =======
 <<<<<<< HEAD
 	form.contact-form,
 =======
 >>>>>>> fb6517e0e203ca0104993e72310c781951e4ca51
+>>>>>>> develop-4.9.8
+=======
+	form.contact-form,
 >>>>>>> develop-4.9.8
 	.contact-form input[type="email"], .contact-form input[type="text"], .contact-form input[type="url"],
 	select,
@@ -881,13 +949,17 @@ Place into a layout grid.
 		flex: 0 1 auto;
 		align-self: stretch;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> develop-4.9.8
+=======
 >>>>>>> develop-4.9.8
 		margin: var(--set_column_margin);
 		float: none;
 		width: 100%;
 		max-width: var(--set_double_column_width);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -896,6 +968,8 @@ Place into a layout grid.
 		width: 100%;
 		max-width: var(--set_double_column_width)%;
 >>>>>>> fb6517e0e203ca0104993e72310c781951e4ca51
+>>>>>>> develop-4.9.8
+=======
 >>>>>>> develop-4.9.8
 		text-align: center;
 	}
@@ -951,12 +1025,16 @@ Place into a layout grid.
 
 	.mailpoet_form input.mailpoet_text,
 <<<<<<< HEAD
+<<<<<<< HEAD
 	form.contact-form,
 =======
 <<<<<<< HEAD
 	form.contact-form,
 =======
 >>>>>>> fb6517e0e203ca0104993e72310c781951e4ca51
+>>>>>>> develop-4.9.8
+=======
+	form.contact-form,
 >>>>>>> develop-4.9.8
 	.contact-form input[type="email"], .contact-form input[type="text"], .contact-form input[type="url"],
 	select,
@@ -1026,13 +1104,17 @@ Place into a layout grid.
 		flex: 0 1 auto;
 		align-self: stretch;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> develop-4.9.8
+=======
 >>>>>>> develop-4.9.8
 		margin: var(--set_column_margin);
 		float: none;
 		width: 100%;
 		max-width: var(--set_column_width);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -1041,6 +1123,8 @@ Place into a layout grid.
 		width: 100%;
 		max-width: var(--set_column_width)%;
 >>>>>>> fb6517e0e203ca0104993e72310c781951e4ca51
+>>>>>>> develop-4.9.8
+=======
 >>>>>>> develop-4.9.8
 		text-align: center;
 	}
@@ -1080,12 +1164,16 @@ Place into a layout grid.
 
 	.mailpoet_form input.mailpoet_text,
 <<<<<<< HEAD
+<<<<<<< HEAD
 	form.contact-form,
 =======
 <<<<<<< HEAD
 	form.contact-form,
 =======
 >>>>>>> fb6517e0e203ca0104993e72310c781951e4ca51
+>>>>>>> develop-4.9.8
+=======
+	form.contact-form,
 >>>>>>> develop-4.9.8
 	.contact-form input[type="email"], .contact-form input[type="text"], .contact-form input[type="url"],
 	select,
@@ -1123,12 +1211,16 @@ Place into a layout grid.
 	.page div.content main .p402_premium ol,
 	.page div.content main .p402_premium table,
 <<<<<<< HEAD
+<<<<<<< HEAD
 	.page div.content main .p402_premium blockquote,
 =======
 <<<<<<< HEAD
 	.page div.content main .p402_premium blockquote,
 =======
 >>>>>>> fb6517e0e203ca0104993e72310c781951e4ca51
+>>>>>>> develop-4.9.8
+=======
+	.page div.content main .p402_premium blockquote,
 >>>>>>> develop-4.9.8
 	div.content main .term-description {
 		max-width: 59rem;
@@ -1156,11 +1248,14 @@ Place into a layout grid.
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> fb6517e0e203ca0104993e72310c781951e4ca51
+>>>>>>> develop-4.9.8
+=======
 >>>>>>> develop-4.9.8
 	.woocommerce-page.columns-3 ul.products li.product, .woocommerce.columns-3 ul.products li.product
 
@@ -1172,14 +1267,18 @@ Place into a layout grid.
 		flex: 0 1 auto;
 		align-self: stretch;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> develop-4.9.8
+=======
 >>>>>>> develop-4.9.8
 		margin: var(--set_column_margin);
 		float: none;
 		width: 100%;
 		max-width: var(--set_column_width);
 		text-align: center;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	}
 
@@ -1197,6 +1296,10 @@ Place into a layout grid.
 =======
 >>>>>>> origin/develop-4.9.8
 >>>>>>> fb6517e0e203ca0104993e72310c781951e4ca51
+>>>>>>> develop-4.9.8
+=======
+	}
+
 >>>>>>> develop-4.9.8
 	.media-object {
 		width: 59rem;
