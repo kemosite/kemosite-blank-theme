@@ -560,7 +560,7 @@ function cd_customizer_css() {
 
 
 	/* [COLUMNS] */
-	$thumbnail_column_count = esc_attr( wc_get_loop_prop( 'columns' ) );
+	$thumbnail_column_count = esc_attr( wc_get_loop_prop( 'columns' ) ); // Careful, requires WooCommerce to function.
 	$thumbnail_column_width = 100 / $thumbnail_column_count;
 	$set_column_margin = 1; // %
 	$set_column_width = $thumbnail_column_width - ($set_column_margin * 2);
