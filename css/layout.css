@@ -383,7 +383,7 @@ Place into a layout grid.
 	.grid-layout-container {
 		display: grid;
 		grid-template-columns: 100%;
-		grid-template-rows: 2rem calc(33vh - 2rem) 1fr;
+		grid-template-rows: 6rem calc(33vh - 1rem) 1fr;
 		grid-template-areas:	"menu"
 								"section"
 								"content";
@@ -430,6 +430,11 @@ Place into a layout grid.
 		margin: 0;
 	}
 
+	.footer-menu li {
+		display: inline-block;
+		padding: 0 .25rem;
+	}
+
 }
 
 @media only screen and (max-width: 39rem) and (orientation: landscape) {
@@ -438,7 +443,7 @@ Place into a layout grid.
 	.grid-layout-container {
 		display: grid;
 		grid-template-columns: 100%;
-		grid-template-rows: 2rem calc(33vh - 2rem) 1fr;
+		grid-template-rows: 6rem calc(33vh - 2rem) 1fr;
 		grid-template-areas:	"menu"
 								"section"	
 								"content";
@@ -504,6 +509,11 @@ Place into a layout grid.
 	    opacity:0;
 	}
 
+	.footer-menu li {
+		display: inline-block;
+		padding: 0 1rem;
+	}
+
 }
 
 @media only screen and (min-width: 39rem) and (max-width: 59rem) and (orientation: portrait) {
@@ -511,7 +521,7 @@ Place into a layout grid.
 	.grid-layout-container {
 		display: grid;
 		grid-template-columns: 100%;
-		grid-template-rows: 2rem calc(33vh - 2rem) 1fr;
+		grid-template-rows: 6rem calc(33vh - 3rem) 1fr;
 		grid-template-areas:	"menu"
 								"section"
 								"content";
@@ -618,6 +628,11 @@ Place into a layout grid.
 	    min-width:100%;
 	    opacity:0;
 	}
+
+	.footer-menu li {
+		display: inline-block;
+		padding: 0 1rem;
+	}
 	
 }
 @media only screen and (min-width: 39rem) and (max-width: 59rem) and (orientation: landscape) {
@@ -626,7 +641,7 @@ Place into a layout grid.
 	.grid-layout-container {
 		display: grid;
 		grid-template-columns: 100%;
-		grid-template-rows: 2rem calc(33vh - 2rem) 1fr;
+		grid-template-rows: 6rem calc(33vh - 2rem) 1fr;
 		grid-template-areas:	"menu"
 								"section"	
 								"content";
@@ -738,6 +753,11 @@ Place into a layout grid.
 	    opacity:0;
 	}
 
+	.footer-menu li {
+		display: inline-block;
+		padding: 0 1rem;
+	}
+
 }
 
 @media only screen and (min-width: 59rem) and (orientation: portrait) {
@@ -761,7 +781,7 @@ Place into a layout grid.
 
 	li.display.logo.position { margin: 0; }
 
-	form.search-form { margin-right: 1rem; }
+	/* form.search-form { margin-right: 1rem; } */
 
 	.top-bar input {
 		max-width: 16rem;
@@ -855,7 +875,7 @@ Place into a layout grid.
 	.grid-layout-container {
 		display: grid;
 		grid-template-columns: 100%;
-		grid-template-rows: 7rem calc(33vh) 1fr;
+		grid-template-rows: 5rem calc(33vh - 2rem) 1fr;
 		grid-template-areas:	"menu"
 								"section"	
 								"content";
