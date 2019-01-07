@@ -12,7 +12,7 @@
  * @package WordPress
  * @subpackage kemosite-blank-theme
  * @since 4.9.6
- * @version 4.6.9.1
+ * @version 4.9.8
  */
  ?>
 
